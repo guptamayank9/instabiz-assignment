@@ -2,7 +2,7 @@
 
 A front-end clone of the [TeddyPups](https://puppy.instabizweb.com/) home page (premium teacup puppies in Dubai), built as part of the Insta Biz Web technical round.
 
-- **Live URL:** _add Vercel link here_
+- **Live URL:** https://instabiz-assignment-nu.vercel.app/
 - **Loom walkthrough:** _add Loom link here_
 
 ---
