@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fffdf8;
+  --color-sand: #fce8c5;
+  --color-ink: #2a1710;
+  --color-rust: #a8481c;
+  --color-caramel: #d08a3e;
+  --color-wa: #1f7a4f;
+  --font-display: "Fraunces", serif;
+  --font-body: "Figtree", sans-serif;
+  --font-hand: "Patrick Hand", cursive;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { @apply bg-cream text-ink font-body; }
+h1, h2, h3 { @apply font-display font-black tracking-tight; }
+
+/* scalloped bottom edge, reusable on navbar/sections */
+.scallop-bottom { position: relative; }
+.scallop-bottom::after {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 100%;
+  height: 14px;
+  background: radial-gradient(circle at 50% 0, var(--scallop, #fffdf8) 13px, transparent 14px) 0 0 / 27.5px 14px repeat-x;
+  pointer-events: none;
+}
+
+/* chunky 3D button look */
+.btn { @apply inline-flex items-center rounded-full px-7 py-3.5 font-semibold transition active:translate-y-0.5; }
+.btn-primary { @apply bg-rust text-white shadow-[0_5px_0_#5c2208] hover:brightness-110; }
+.btn-outline { @apply border-2 border-ink text-ink hover:bg-ink hover:text-cream; }
+.btn-wa { @apply bg-wa text-white shadow-[0_5px_0_#10402a] hover:brightness-110; }
+
+.arch {
+  border-radius: 9999px 9999px 0 0;
+  overflow: hidden;
+  border: 3px solid var(--color-ink);
+}
+
+/* hero ke neeche ka scalloped sand strip */
+.scallop-top {
+  background:
+    radial-gradient(circle at 50% 100%, transparent 24px, var(--color-sand) 25px) 0 0 / 48px 26px repeat-x;
+}
+
+/* wooden plank wall */
+.wood-wall {
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 2px, transparent 2px 40px),
+    linear-gradient(#7a4a2c, #5c3420);
+}
+
+/* paper tape on polaroids */
+.tape {
+  position: absolute; top: -14px; left: 50%;
+  width: 90px; height: 28px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 240, 200, .75);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+/* paw print chat wallpaper */
+.paw-bg {
+  background-color: #fdeccb;
+  background-image: radial-gradient(circle, rgba(168,72,28,.12) 5px, transparent 6px);
+  background-size: 38px 38px;
+}
+
+/* scale pattern on passport pages */
+.scale-bg {
+  background-color: #fff6e6;
+  background-image: radial-gradient(circle at 50% 100%, transparent 18px, rgba(208,138,62,.18) 19px, transparent 20px);
+  background-size: 40px 22px;
+}
+
+@keyframes twinkle { 0%,100% { opacity: .2; transform: scale(.8);} 50% { opacity: 1; transform: scale(1.2);} }
+.star { position: absolute; color: #f5c066; animation: twinkle 3s ease-in-out infinite; }
